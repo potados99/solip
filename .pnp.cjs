@@ -31,6 +31,7 @@ const RAW_RUNTIME_STATE =
           ["@swc/cli", "virtual:8b55b48837abebb87b41280c6c037631a8ebbeb22b52ecf792a5c179f01ed2ece9e1bd7883960fc08e4e76a8b1ec16cd38c7154929793c843712ec264a875823#npm:0.7.8"],\
           ["@swc/core", "virtual:8b55b48837abebb87b41280c6c037631a8ebbeb22b52ecf792a5c179f01ed2ece9e1bd7883960fc08e4e76a8b1ec16cd38c7154929793c843712ec264a875823#npm:1.13.5"],\
           ["@types/express", "npm:5.0.3"],\
+          ["chokidar", "npm:4.0.3"],\
           ["express", "npm:5.1.0"],\
           ["solip", "workspace:."],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
@@ -252,7 +253,7 @@ const RAW_RUNTIME_STATE =
           ["@types/chokidar", null],\
           ["@types/swc__core", null],\
           ["@xhmikosr/bin-wrapper", "npm:13.2.0"],\
-          ["chokidar", null],\
+          ["chokidar", "npm:4.0.3"],\
           ["commander", "npm:8.3.0"],\
           ["minimatch", "npm:9.0.5"],\
           ["piscina", "npm:4.9.2"],\
@@ -926,6 +927,16 @@ const RAW_RUNTIME_STATE =
           ["call-bind-apply-helpers", "npm:1.0.2"],\
           ["call-bound", "npm:1.0.4"],\
           ["get-intrinsic", "npm:1.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["chokidar", [\
+      ["npm:4.0.3", {\
+        "packageLocation": "../../.yarn/berry/cache/chokidar-npm-4.0.3-962354fbb4-10c0.zip/node_modules/chokidar/",\
+        "packageDependencies": [\
+          ["chokidar", "npm:4.0.3"],\
+          ["readdirp", "npm:4.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1918,6 +1929,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["readdirp", [\
+      ["npm:4.1.2", {\
+        "packageLocation": "../../.yarn/berry/cache/readdirp-npm-4.1.2-3440472afe-10c0.zip/node_modules/readdirp/",\
+        "packageDependencies": [\
+          ["readdirp", "npm:4.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["resolve-alpn", [\
       ["npm:1.2.1", {\
         "packageLocation": "../../.yarn/berry/cache/resolve-alpn-npm-1.2.1-af77edd28b-10c0.zip/node_modules/resolve-alpn/",\
@@ -2145,6 +2165,7 @@ const RAW_RUNTIME_STATE =
           ["@swc/cli", "virtual:8b55b48837abebb87b41280c6c037631a8ebbeb22b52ecf792a5c179f01ed2ece9e1bd7883960fc08e4e76a8b1ec16cd38c7154929793c843712ec264a875823#npm:0.7.8"],\
           ["@swc/core", "virtual:8b55b48837abebb87b41280c6c037631a8ebbeb22b52ecf792a5c179f01ed2ece9e1bd7883960fc08e4e76a8b1ec16cd38c7154929793c843712ec264a875823#npm:1.13.5"],\
           ["@types/express", "npm:5.0.3"],\
+          ["chokidar", "npm:4.0.3"],\
           ["express", "npm:5.1.0"],\
           ["solip", "workspace:."],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
