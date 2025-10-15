@@ -8,3 +8,16 @@
 
 - `swc`와 CommonJS 모듈
 - TypeScript 모듈 HMR
+
+## 실행
+
+저장소를 클론한 뒤 다음을 실행해주세요.
+
+```bash
+$ yarn install
+$ yarn build && yarn start
+```
+
+http://localhost:8080/model/mymodel
+
+[mymodel.ts](./src/model/mymodel.ts)을 편집하고 웹 페이지를 새로고침하여 변화가 생기는지 봅니다.
