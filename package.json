@@ -1,0 +1,19 @@
+{
+  "name": "solip",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:potados99/solip.git",
+  "author": "potados99 <potados99@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "swc src -d dist --strip-leading-paths && tsc --emitDeclarationOnly",
+    "start": "NODE_ENV=production node dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.7.8",
+    "@swc/core": "^1.13.5",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "yarn@4.10.3"
+}

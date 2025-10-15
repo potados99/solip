@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.ts"],"sourcesContent":["console.log(\"hello world\");"],"names":["console","log"],"mappings":"aAAAA,QAAQC,GAAG,CAAC"}
