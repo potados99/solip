@@ -13,7 +13,11 @@
   "devDependencies": {
     "@swc/cli": "^0.7.8",
     "@swc/core": "^1.13.5",
+    "@types/express": "^5",
     "typescript": "^5.9.3"
   },
-  "packageManager": "yarn@4.10.3"
+  "packageManager": "yarn@4.10.3",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
