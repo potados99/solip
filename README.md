@@ -8,6 +8,7 @@
 
 - `swc`와 CommonJS 모듈
 - TypeScript 모듈 HMR
+- yarn berry zero-install
 
 ## 실행
 
