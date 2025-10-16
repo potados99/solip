@@ -1,5 +1,6 @@
 import express from "express";
 import Loader from "./loader";
+import { Model } from "./types";
 
 async function bootstrap() {
     const app = express();

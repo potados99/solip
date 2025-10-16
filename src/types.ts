@@ -1,3 +1,3 @@
-type Model = {
+export type Model = {
     run: () => string;
 }
