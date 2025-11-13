@@ -93,21 +93,12 @@ async function devServe() {
       watch: ["src/index.ts"],
       ignore: ["dist/**", "**/*.js", "**/*.d.ts"],
       exec: [
-        // SWC_BUILD_COMMAND,
         "node --no-warnings -r source-map-support/register --import dynohot --enable-source-maps dist/index.js",
       ].join(" && "),
     } as NodemonSettings;
   })();
+
   nodemon.default(nodemonConfig);
-
-  // 프로세스 종료 처리
-  const cleanup = async () => {
-    process.exit(0);
-  };
-
-  process.on("SIGINT", cleanup);
-  process.on("SIGTERM", cleanup);
-  process.on("SIGUSR2", cleanup);
 }
 
 main();
