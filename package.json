@@ -1,33 +1,12 @@
 {
-  "name": "solip",
-  "version": "1.0.0",
-  "repository": "git@github.com:potados99/solip.git",
-  "author": "potados99 <potados99@gmail.com>",
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "scripts": {
-    "build": "rm -rf dist && swc src -d dist --strip-leading-paths && tsc --emitDeclarationOnly",
-    "start": "NODE_ENV=production node --import dynohot --enable-source-maps dist/index.js",
-    "type-check": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@swc/cli": "^0.7.8",
-    "@swc/core": "^1.13.5",
-    "@types/express": "^5",
-    "typescript": "^5.9.3"
-  },
+  "name": "solip-monorepo",
+  "workspaces": [
+    "packages/*"
+  ],
   "packageManager": "yarn@4.10.3",
-  "dependencies": {
-    "chokidar": "^4.0.3",
-    "dynohot": "^2.1.1",
-    "express": "^5.1.0"
-  },
-  "dependenciesMeta": {
-    "dynohot@2.1.1": {
-      "unplugged": true
-    }
+  "devDependencies": {
+    "corepack": "^0.34.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
   }
 }
