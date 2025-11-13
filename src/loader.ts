@@ -25,14 +25,14 @@ export default class Loader<T> {
       this.moduleDir
     );
 
-    console.log(`Watching ${whereToWatch}`);
+    console.log(`다음 경로의 파일 변경을 감지합니다: ${whereToWatch}`);
 
     watch(whereToWatch).on("change", async (modifiedPath) => {
       if (!modifiedPath.endsWith(".ts") || modifiedPath.endsWith(".d.ts")) {
         return;
       }
 
-      console.log(`\nChange detected at: ${modifiedPath}`);
+      console.log(`\n파일 변경 감지: ${modifiedPath}`);
 
       const { code, map } = await swc.transformFile(modifiedPath, {
         // 이하 .swcrc 내용과 동일합니다.
@@ -59,7 +59,7 @@ export default class Loader<T> {
       await mkdir(path.dirname(transpiledPath), { recursive: true });
       await writeFile(transpiledPath, code);
 
-      console.log(`Transpiled to: ${transpiledPath}`);
+      console.log(`트랜스파일 완료: ${transpiledPath}`);
 
       if (map) {
         const mapPath = transpiledPath + ".map";
@@ -70,7 +70,7 @@ export default class Loader<T> {
           "\n//# sourceMappingURL=" + path.basename(mapPath);
         await writeFile(transpiledPath, patchToAppend, { flag: "a" });
 
-        console.log(`Added source mapping to: ${mapPath}`);
+        console.log(`소스맵 추가 완료: ${mapPath}`);
       }
 
       await this.load([transpiledPath]);
@@ -115,7 +115,7 @@ export default class Loader<T> {
     // 캐시 버스팅 쿼리 파라미터 제거 (예: 'module?t=123' -> 'module')
     const cleanPath = modulePath.split("?")[0];
 
-    console.log(`Importing module: ${cleanPath}`);
+    console.log(`모듈 임포트합니다: ${cleanPath}`);
     const module: T = (await import(modulePath)).default; // import는 원본 경로 사용 (캐시 버스팅 유지)
     const moduleName = path.basename(cleanPath).replace(/\.[^/.]+$/, "");
 

@@ -27,11 +27,10 @@ async function bootstrap() {
         res.send(result ?? `Model '${name}' not found.`);
     });
 
-    app.listen(8080, () => {
-        console.log("Server is running on port 8080");
+    const port = 8080;
+    app.listen(port, () => {
+        console.log(`서버가 포트 ${port}에서 실행 중입니다.`);
     });
 }
-
-console.log("Hello World");
 
 bootstrap();
