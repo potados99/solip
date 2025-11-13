@@ -1,3 +1,5 @@
+import type {} from "dynohot";
+
 import express from "express";
 import Loader from "./loader";
 import { Model } from "./types";
