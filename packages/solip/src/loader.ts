@@ -22,9 +22,10 @@ export default class Loader<T> {
     const modelDirPath = path.join(
       Solip.apiRootPath,
       this.modelDir
-    );
+    ).replace("/src/", import.meta.hot ? "/src/" : "/dist/");
+
     const allModulePaths = (await readdir(modelDirPath))
-      .filter((filename) => filename.endsWith(".ts"))
+      .filter((filename) => filename.endsWith(import.meta.hot ? ".ts" : ".js"))
       .map((filename) => path.join(modelDirPath, filename));
     const pathsToLoad = modulePaths ?? allModulePaths;
 
