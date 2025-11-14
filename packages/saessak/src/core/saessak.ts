@@ -1,36 +1,46 @@
 import express from "express";
-import Loader from "./loader";
+import ModuleLoader from "./module-loader";
 import { Model } from "./types";
 import http from "http";
-import { findApiRootPath } from "./utils/path-utils";
+import { findApiRootPath } from "../utils/path-utils";
 import chalk from "chalk";
 
+/**
+ * Saessak 메인 클래스입니다.
+ */
 class SaessakClass {
   private server?: http.Server;
 
-  private _apiRootPath: string | null = null;
-  set apiRootPath(apiRootPath: string) {
-    console.log(chalk.blue(`프로젝트 루트 경로가 설정되었습니다: ${apiRootPath}`));
-    this._apiRootPath = apiRootPath;
+  private _projectRootPath: string | null = null;
+  set projectRootPath(projectRootPath: string) {
+    console.log(chalk.blue(`프로젝트 루트 경로가 설정되었습니다: ${projectRootPath}`));
+    this._projectRootPath = projectRootPath;
   }
-  get apiRootPath(): string {
-    if (this._apiRootPath === null) {
+  get projectRootPath(): string {
+    if (this._projectRootPath === null) {
       throw new Error("Saessak이 초기화되지 않았습니다.");
     }
-    return this._apiRootPath!;
+    return this._projectRootPath!;
   }
   
+  /**
+   * Saessak을 초기화합니다.
+   */
   init() {
     console.log(chalk.green("Saessak을 초기화합니다."));
 
-    this.apiRootPath = findApiRootPath();
+    this.projectRootPath = findApiRootPath();
   }
 
+  /**
+   * 서버를 생성합니다.
+   * @param port 서버 포트
+   */
   async createServer(port: number = 8080) {
     const app = express();
     
     // src/model 디렉토리 아래에 있는 친구들은 동적으로 임포트해서 가져와 쓸 겁니다.
-    const modelLoader = new Loader<Model>(`src/model`);
+    const modelLoader = new ModuleLoader<Model>(`src/model`);
 
     // 처음에 한 번은 모두 당겨와줍니다.
     await modelLoader.load();
@@ -51,9 +61,14 @@ class SaessakClass {
     });
   }
 
+  /**
+   * 서버를 종료합니다.
+   */
   async closeServer() {
     if (this.server) {
       this.server.close();
+      this.server = undefined;
+      console.log(chalk.green("서버가 종료되었습니다."));
     }
   }
 }

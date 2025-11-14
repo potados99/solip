@@ -187,6 +187,12 @@ export function makeResolveAndLoad(underlyingFileSystem: LoaderFileSystem) {
 				const packageMeta = await resolvePackage(fileSystem, outputUrl);
 				const tsConfig = await resolveTypeScriptPackage(outputUrl, packageMeta?.packagePath);
 				
+				// 이 부분 코드의 원래 목적은 import(import.meta.resolve('./specifier.js'))로 import할 때와 같이
+				// file:///.../specifier.js 형식으로 들어오는 fully resolved path에 대해 이에 대응되는 source 파일을 찾아서 반환하는 것이었습니다.
+				// 그런데 Saessak을 만들다 보니 file:///.../specifier.ts 형식으로 프로젝트 내의 ts source 파일을 import할 일이 있었습니다.
+				// 그러나 이곳 기존 코드는 specifier가 file:/// 형식을 가지기만 하면 이를 "트랜스파일된 js 파일"로 간주하고 이에 대응하는 ts 파일을 찾으려는 이슈가 있었습니다.
+				// 이를 해결하기 위해 specifier가 file:/// 형식을 가지고 있음에도 그 파일이 TypeScript 파일이라면 이를 그대로 반환하도록 수정하였습니다.
+
 				// 먼저 파일이 이미 source 파일인지 확인 (TypeScript 파일이고 실제로 존재하는지)
 				let sourceUrl: URL | undefined;
 				if (testAnyTypeScript.test(outputUrl.pathname) && await fileSystem.fileExists(outputUrl)) {

@@ -1,15 +1,21 @@
 import { tsicli } from "tsicli";
 import chalk from "chalk";
-import { BUILD_DIR, getSWCBuildCommand, TSC_DECLARATION_COMMAND } from "./build-config";
+import {
+  BUILD_DIR,
+  getSWCBuildCommand,
+  TSC_DECLARATION_COMMAND,
+} from "./build-config";
 import { existsSync, rmSync } from "fs";
-import { execSync } from "child_process";
+import { execSync, spawn } from "child_process";
 import { exists } from "../utils/fs-utils";
-import path from "path";
-import { Saessak } from "../saessak";
+import { Saessak } from "../core/saessak";
 
+/**
+ * Saessak CLI의 진입점입니다.
+ */
 async function main() {
   Saessak.init();
-  
+
   await tsicli(process.argv, {
     types: {},
     args: [["build"], ["serve"], ["dev"]],
@@ -21,6 +27,9 @@ async function main() {
   });
 }
 
+/**
+ * 사용자 프로젝트를 빌드합니다.
+ */
 async function build() {
   console.log(chalk.green("빌드를 시작합니다."));
 
@@ -30,54 +39,66 @@ async function build() {
       rmSync(BUILD_DIR, { recursive: true, force: true });
     }
   } catch (error) {
-    console.error(chalk.red("빌드 결과물 디렉토리 삭제에 실패하였습니다."), error);
+    console.error(
+      chalk.red("빌드 결과물 디렉토리 삭제에 실패하였습니다."),
+      error
+    );
     process.exit(1);
   }
 
   try {
     console.log(chalk.blue("SWC로 빌드를 시작합니다."));
-    execSync(getSWCBuildCommand(Saessak.apiRootPath), { cwd: Saessak.apiRootPath, stdio: "inherit" });
-    console.log(chalk.blue("TSC로 선언맵을 생성합니다."));
-    execSync(TSC_DECLARATION_COMMAND, { cwd: Saessak.apiRootPath, stdio: "inherit" });
+    execSync(getSWCBuildCommand(Saessak.projectRootPath), {
+      cwd: Saessak.projectRootPath,
+      stdio: "inherit",
+    });
   } catch (error) {
     console.error(chalk.red("빌드에 실패하였습니다."), error);
+    process.exit(1);
+  }
+
+  try {
+    console.log(chalk.blue("TSC로 선언맵을 생성합니다."));
+    execSync(TSC_DECLARATION_COMMAND, {
+      cwd: Saessak.projectRootPath,
+      stdio: "inherit",
+    });
+  } catch (error) {
+    console.error(chalk.red("선언맵 생성에 실패하였습니다."), error);
     process.exit(1);
   }
 
   console.log(chalk.green("빌드가 완료되었습니다."));
 }
 
+/**
+ * 사용자 프로젝트의 빌드 결과물을 실행합니다.
+ */
 async function serve() {
   console.log(chalk.green("서버를 시작합니다."));
 
-  const distIndexPath = path.join(Saessak.apiRootPath, "dist", "index.js");
+  const entryPoint = "dist/index.js";
 
-  console.log(`다음 파일을 실행합니다: ${distIndexPath}`);
+  console.log(`다음 파일을 실행합니다: ${entryPoint}`);
 
-  if (!(await exists(distIndexPath))) {
+  if (!(await exists(entryPoint))) {
     console.log(
-      chalk.red("dist/index.js not found. Please build your project first.")
+      chalk.red(
+        `${entryPoint} 파일이 존재하지 않습니다. 먼저 build를 실행해주세요.`
+      )
     );
-    console.log(chalk.blue("Run: yarn sonamu build"));
-    return;
+    process.exit(1);
   }
 
-  const { spawn } = await import("child_process");
-  const serverProcess = spawn(
-    "node",
-    ["-r", "source-map-support/register", distIndexPath],
-    {
-      cwd: Saessak.apiRootPath,
-      stdio: "inherit",
-    }
-  );
-
-  process.on("SIGINT", () => {
-    serverProcess.kill("SIGTERM");
-    process.exit(0);
+  spawn("node", ["-r", "source-map-support/register", entryPoint], {
+    cwd: Saessak.projectRootPath,
+    stdio: "inherit",
   });
 }
 
+/**
+ * 사용자 프로젝트의 개발 서버를 시작합니다.
+ */
 async function dev() {
   console.log(chalk.green("개발 서버를 시작합니다."));
 
@@ -85,20 +106,21 @@ async function dev() {
 
   console.log(`다음 파일을 실행합니다: ${entryPoint}`);
 
-  const { spawn } = await import("child_process");
-  const serverProcess = spawn(
+  spawn(
     "node",
-    ["--import", "@saessak-kit/loader", "--import", "dynohot", "--enable-source-maps", entryPoint],
+    [
+      "--import",
+      "@saessak-kit/loader",
+      "--import",
+      "dynohot",
+      "--enable-source-maps",
+      entryPoint,
+    ],
     {
-      cwd: Saessak.apiRootPath,
+      cwd: Saessak.projectRootPath,
       stdio: "inherit",
     }
   );
-
-  process.on("SIGINT", () => {
-    serverProcess.kill("SIGTERM");
-    process.exit(0);
-  });
 }
 
 main();
