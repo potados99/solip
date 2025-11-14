@@ -451,7 +451,7 @@ const RAW_RUNTIME_STATE =
     ],\
     [\
       "baseline-browser-mapping",\
-      "npm:2.8.27"\
+      "npm:2.8.28"\
     ],\
     [\
       "bin-version",\
@@ -615,7 +615,7 @@ const RAW_RUNTIME_STATE =
     ],\
     [\
       "electron-to-chromium",\
-      "npm:1.5.250"\
+      "npm:1.5.251"\
     ],\
     [\
       "emoji-regex",\
@@ -935,7 +935,7 @@ const RAW_RUNTIME_STATE =
     ],\
     [\
       "make-fetch-happen",\
-      "npm:15.0.2"\
+      "npm:15.0.3"\
     ],\
     [\
       "math-intrinsics",\
@@ -983,7 +983,7 @@ const RAW_RUNTIME_STATE =
     ],\
     [\
       "minipass-fetch",\
-      "npm:4.0.1"\
+      "npm:5.0.0"\
     ],\
     [\
       "minipass-flush",\
@@ -1107,7 +1107,7 @@ const RAW_RUNTIME_STATE =
     ],\
     [\
       "proc-log",\
-      "npm:5.0.0"\
+      "npm:6.0.0"\
     ],\
     [\
       "promise-retry",\
@@ -1442,7 +1442,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["corepack", "npm:0.34.3"],\
           ["prettier", "npm:3.6.2"],\
-          ["saessak-monorepo", "workspace:."]\
+          ["saessak-monorepo", "workspace:."],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2678,10 +2679,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["baseline-browser-mapping", [\
-      ["npm:2.8.27", {\
-        "packageLocation": "./.yarn/cache/baseline-browser-mapping-npm-2.8.27-6c36e1080f-453355786f.zip/node_modules/baseline-browser-mapping/",\
+      ["npm:2.8.28", {\
+        "packageLocation": "./.yarn/cache/baseline-browser-mapping-npm-2.8.28-9d8c2e2d8e-f54abab4d6.zip/node_modules/baseline-browser-mapping/",\
         "packageDependencies": [\
-          ["baseline-browser-mapping", "npm:2.8.27"]\
+          ["baseline-browser-mapping", "npm:2.8.28"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2769,10 +2770,10 @@ const RAW_RUNTIME_STATE =
       ["npm:4.28.0", {\
         "packageLocation": "./.yarn/cache/browserslist-npm-4.28.0-c16ea3c47c-59dc88f8d9.zip/node_modules/browserslist/",\
         "packageDependencies": [\
-          ["baseline-browser-mapping", "npm:2.8.27"],\
+          ["baseline-browser-mapping", "npm:2.8.28"],\
           ["browserslist", "npm:4.28.0"],\
           ["caniuse-lite", "npm:1.0.30001754"],\
-          ["electron-to-chromium", "npm:1.5.250"],\
+          ["electron-to-chromium", "npm:1.5.251"],\
           ["node-releases", "npm:2.0.27"],\
           ["update-browserslist-db", "virtual:c16ea3c47c3f481d4b294c3f8cbee47f97330604def79ce3b6a7a4167ccd05fd4ae1864e80f935b7d27e04da9cb97d2dc56b9955f55cd9aeac05cc005f33ecff#npm:1.1.4"]\
         ],\
@@ -3183,10 +3184,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["electron-to-chromium", [\
-      ["npm:1.5.250", {\
-        "packageLocation": "./.yarn/cache/electron-to-chromium-npm-1.5.250-3e6f742b0b-3b24c08939.zip/node_modules/electron-to-chromium/",\
+      ["npm:1.5.251", {\
+        "packageLocation": "./.yarn/cache/electron-to-chromium-npm-1.5.251-2383fa0c7c-37d7480f9a.zip/node_modules/electron-to-chromium/",\
         "packageDependencies": [\
-          ["electron-to-chromium", "npm:1.5.250"]\
+          ["electron-to-chromium", "npm:1.5.251"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4063,21 +4064,21 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["make-fetch-happen", [\
-      ["npm:15.0.2", {\
-        "packageLocation": "./.yarn/cache/make-fetch-happen-npm-15.0.2-53d5a83906-66097eae91.zip/node_modules/make-fetch-happen/",\
+      ["npm:15.0.3", {\
+        "packageLocation": "./.yarn/cache/make-fetch-happen-npm-15.0.3-10a832fcad-78da4fc1df.zip/node_modules/make-fetch-happen/",\
         "packageDependencies": [\
           ["@npmcli/agent", "npm:4.0.0"],\
           ["cacache", "npm:20.0.1"],\
           ["http-cache-semantics", "npm:4.2.0"],\
-          ["make-fetch-happen", "npm:15.0.2"],\
+          ["make-fetch-happen", "npm:15.0.3"],\
           ["minipass", "npm:7.1.2"],\
-          ["minipass-fetch", "npm:4.0.1"],\
+          ["minipass-fetch", "npm:5.0.0"],\
           ["minipass-flush", "npm:1.0.5"],\
           ["minipass-pipeline", "npm:1.2.4"],\
           ["negotiator", "npm:1.0.0"],\
-          ["proc-log", "npm:5.0.0"],\
+          ["proc-log", "npm:6.0.0"],\
           ["promise-retry", "npm:2.0.1"],\
-          ["ssri", "npm:12.0.0"]\
+          ["ssri", "npm:13.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4216,12 +4217,12 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["minipass-fetch", [\
-      ["npm:4.0.1", {\
-        "packageLocation": "./.yarn/cache/minipass-fetch-npm-4.0.1-ce1d15e957-7ddfebdbb8.zip/node_modules/minipass-fetch/",\
+      ["npm:5.0.0", {\
+        "packageLocation": "./.yarn/cache/minipass-fetch-npm-5.0.0-e53c2bae4c-4fb7dca630.zip/node_modules/minipass-fetch/",\
         "packageDependencies": [\
           ["encoding", "npm:0.1.13"],\
           ["minipass", "npm:7.1.2"],\
-          ["minipass-fetch", "npm:4.0.1"],\
+          ["minipass-fetch", "npm:5.0.0"],\
           ["minipass-sized", "npm:1.0.3"],\
           ["minizlib", "npm:3.1.0"]\
         ],\
@@ -4310,7 +4311,7 @@ const RAW_RUNTIME_STATE =
           ["env-paths", "npm:2.2.1"],\
           ["exponential-backoff", "npm:3.1.3"],\
           ["graceful-fs", "npm:4.2.11"],\
-          ["make-fetch-happen", "npm:15.0.2"],\
+          ["make-fetch-happen", "npm:15.0.3"],\
           ["node-gyp", "npm:12.1.0"],\
           ["nopt", "npm:9.0.0"],\
           ["proc-log", "npm:6.0.0"],\
@@ -4546,13 +4547,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["proc-log", [\
-      ["npm:5.0.0", {\
-        "packageLocation": "./.yarn/cache/proc-log-npm-5.0.0-405173f9b4-35610bdb01.zip/node_modules/proc-log/",\
-        "packageDependencies": [\
-          ["proc-log", "npm:5.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:6.0.0", {\
         "packageLocation": "./.yarn/cache/proc-log-npm-6.0.0-455d6f01a6-98831f35d3.zip/node_modules/proc-log/",\
         "packageDependencies": [\
@@ -4767,7 +4761,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["corepack", "npm:0.34.3"],\
           ["prettier", "npm:3.6.2"],\
-          ["saessak-monorepo", "workspace:."]\
+          ["saessak-monorepo", "workspace:."],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -5077,6 +5072,14 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["minipass", "npm:7.1.2"],\
           ["ssri", "npm:12.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:13.0.0", {\
+        "packageLocation": "./.yarn/cache/ssri-npm-13.0.0-f5fa93375d-fd59bfedf0.zip/node_modules/ssri/",\
+        "packageDependencies": [\
+          ["minipass", "npm:7.1.2"],\
+          ["ssri", "npm:13.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
