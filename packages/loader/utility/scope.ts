@@ -129,6 +129,7 @@ export async function resolvePackage(fs: FileSystemAsync, fileOrDirectory: URL) 
 			return {
 				packageJson: content,
 				packagePath: path,
+				packageDirectory: directory,
 			};
 		} catch {}
 	}

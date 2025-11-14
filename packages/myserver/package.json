@@ -8,16 +8,18 @@
   "scripts": {
     "build": "solip build",
     "serve": "solip serve",
-    "dev:serve": "solip dev:serve"
+    "dev": "solip dev",
+    "go": "node --import @solip-kit/loader --import dynohot --enable-source-maps src/index.ts"
   },
   "dependencies": {
-    "dynohot": "^2.1.1",
     "solip": "workspace:^",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {
+    "@solip-kit/loader": "workspace:^",
     "@swc/cli": "^0.7.8",
     "@swc/core": "^1.13.5",
-    "@types/source-map-support": "^0"
+    "@types/source-map-support": "^0",
+    "dynohot": "^2.1.1"
   }
 }

@@ -4,7 +4,7 @@ import type { LoadHook, ResolveHook } from "node:module";
 import type {} from "dynohot";
 import { resolve as cjsResolve } from "@loaderkit/resolve/cjs";
 import { resolve as esmResolve } from "@loaderkit/resolve/esm";
-import { transpileSource } from "./utility/esbuild.js";
+import { transpileSource } from "./utility/swc.js";
 import { makeResolveTypeScriptPackage, resolveFormat, resolvePackage } from "./utility/scope.js";
 import { absoluteJavaScriptToTypeScript, absoluteTypeScriptToJavaScript, outputToSourceCandidates, sourceToOutput, testAnyJSON, testAnyJavaScript, testAnyScript, testAnyTypeScript } from "./utility/translate.js";
 
@@ -186,13 +186,21 @@ export function makeResolveAndLoad(underlyingFileSystem: LoaderFileSystem) {
 				const outputUrl = new URL(specifier);
 				const packageMeta = await resolvePackage(fileSystem, outputUrl);
 				const tsConfig = await resolveTypeScriptPackage(outputUrl, packageMeta?.packagePath);
-				const sourceUrl = await async function() {
-					for (const url of outputToSourceCandidates(outputUrl, tsConfig?.locations)) {
-						if (await fileSystem.fileExists(url)) {
-							return url;
+				
+				// 먼저 파일이 이미 source 파일인지 확인 (TypeScript 파일이고 실제로 존재하는지)
+				let sourceUrl: URL | undefined;
+				if (testAnyTypeScript.test(outputUrl.pathname) && await fileSystem.fileExists(outputUrl)) {
+					sourceUrl = outputUrl;
+				} else {
+					// output 파일이라면 source 파일을 찾기
+					sourceUrl = await async function() {
+						for (const url of outputToSourceCandidates(outputUrl, tsConfig?.locations)) {
+							if (await fileSystem.fileExists(url)) {
+								return url;
+							}
 						}
-					}
-				}();
+					}();
+				}
 				if (!sourceUrl) {
 					return nextResolve(specifier, context);
 				}
@@ -331,7 +339,6 @@ export function makeResolveAndLoad(underlyingFileSystem: LoaderFileSystem) {
 
 			// Resolve compiler options
 			const packageMeta = await resolvePackage(fileSystem, tsSourceUrl);
-			const tsConfig = await resolveTypeScriptPackage(tsSourceUrl, packageMeta?.packagePath);
 
 			switch (format) {
 				case "module": {
@@ -345,7 +352,7 @@ export function makeResolveAndLoad(underlyingFileSystem: LoaderFileSystem) {
 					// Get transpiled source. JavaScript is also passed through esbuild in case downleveling
 					// is expected.
 					const content = await fileSystem.readFileString(tsSourceUrl);
-					const payload = await transpileSource(content, format, tsSourceUrl, tsConfig?.compilerOptions ?? {});
+					const payload = await transpileSource(content, tsSourceUrl, packageMeta?.packageDirectory);
 					return {
 						format,
 						shortCircuit: true,
@@ -363,7 +370,7 @@ export function makeResolveAndLoad(underlyingFileSystem: LoaderFileSystem) {
 				}
 
 				default:
-					throw new Error("@loaderkit/ts: Unexpected format");
+					throw new Error("@solip-kit/loader: Unexpected format");
 			}
 		}();
 	};

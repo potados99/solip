@@ -6,7 +6,10 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "scripts": {
     "build": "rm -rf dist && swc src -d dist --strip-leading-paths && tsc --emitDeclarationOnly",
@@ -19,7 +22,6 @@
     "@types/express": "^5",
     "dynohot": "^2.1.1",
     "nodemon": "^3.1.11",
-    "tsicli": "^1.0.5",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@4.10.3",
@@ -27,7 +29,8 @@
     "@swc/core": "^1.13.5",
     "chalk": "^5.6.2",
     "chokidar": "^4.0.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "tsicli": "^1.0.5"
   },
   "dependenciesMeta": {
     "dynohot@2.1.1": {
@@ -35,6 +38,7 @@
     }
   },
   "peerDependencies": {
+    "@solip-kit/loader": "^2.1.1",
     "@swc/cli": "^0.7.8",
     "@swc/core": "^1.13.5",
     "dynohot": "^2.1.1",

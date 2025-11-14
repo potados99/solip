@@ -35,9 +35,6 @@ class SolipClass {
     // 처음에 한 번은 모두 당겨와줍니다.
     await modelLoader.load();
 
-    // 그리고 실행 중에 소스코드 변경이 생기면 다시 당겨올 수 있도록 해줍니다.
-    modelLoader.autoReload();
-
     app.get("/model/:name", (req, res) => {
       const { name } = req.params;
 

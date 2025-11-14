@@ -3,9 +3,7 @@ import chalk from "chalk";
 import { BUILD_DIR, getSWCBuildCommand } from "./build-config";
 import { existsSync, rmSync } from "fs";
 import { execSync } from "child_process";
-import { NodemonSettings } from "nodemon";
 import { exists } from "../utils/fs-utils";
-import { readFile } from "fs/promises";
 import path from "path";
 import { Solip } from "../solip";
 
@@ -14,11 +12,11 @@ async function main() {
   
   await tsicli(process.argv, {
     types: {},
-    args: [["build"], ["serve"], ["dev:serve"]],
+    args: [["build"], ["serve"], ["dev"]],
     runners: {
       build,
       serve,
-      "dev:serve": devServe,
+      dev,
     },
   });
 }
@@ -76,29 +74,27 @@ async function serve() {
   });
 }
 
-async function devServe() {
+async function dev() {
   console.log(chalk.green("개발 서버를 시작합니다."));
 
-  const nodemon = await import("nodemon");
+  const entryPoint = "src/index.ts";
 
-  const nodemonConfig = await (async () => {
-    const projectNodemonPath = path.join(Solip.apiRootPath, "nodemon.json");
-    const hasProjectNodemon = await exists(projectNodemonPath);
+  console.log(`다음 파일을 실행합니다: ${entryPoint}`);
 
-    if (hasProjectNodemon) {
-      return JSON.parse(await readFile(projectNodemonPath, "utf8"));
+  const { spawn } = await import("child_process");
+  const serverProcess = spawn(
+    "node",
+    ["--import", "@solip-kit/loader", "--import", "dynohot", "--enable-source-maps", entryPoint],
+    {
+      cwd: Solip.apiRootPath,
+      stdio: "inherit",
     }
+  );
 
-    return {
-      watch: ["src/index.ts"],
-      ignore: ["dist/**", "**/*.js", "**/*.d.ts"],
-      exec: [
-        "node --no-warnings -r source-map-support/register --import dynohot --enable-source-maps dist/index.js",
-      ].join(" && "),
-    } as NodemonSettings;
-  })();
-
-  nodemon.default(nodemonConfig);
+  process.on("SIGINT", () => {
+    serverProcess.kill("SIGTERM");
+    process.exit(0);
+  });
 }
 
 main();
