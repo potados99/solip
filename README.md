@@ -15,3 +15,8 @@ Saessak은 아래 나열한 부분들에서 Sonamu와 비슷한 점이 있지만
 - TypeScript 직접 실행 및 소스코드 변경시 실시간으로 반영해주는 dev 서버를 제공함.
 - Zero-install을 사용하여 의존성을 관리함.
 - Workspace를 통해 monorepo에서 여러 프로젝트를 관리함.
+
+## 바로가기
+
+- [Saessak 프레임워크 본체](./packages/saessak/README.md)
+- [Saessak 예제 프로젝트](./packages/myserver/README.md)
