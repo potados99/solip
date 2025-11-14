@@ -1,7 +1,7 @@
 import path from "path";
 import { readdir } from "fs/promises";
 import { pathToFileURL } from "url";
-import { Solip } from "./solip";
+import { Saessak } from "./saessak";
 
 /**
  * 주어진 경로에서 모듈을 긁어 import하고, 필요하다면 소스코드의 변경을 감지해 최신으로 유지해주는 친구입니다.
@@ -20,7 +20,7 @@ export default class Loader<T> {
    */
   async load(modulePaths?: string[]) {
     const modelDirPath = path.join(
-      Solip.apiRootPath,
+      Saessak.apiRootPath,
       this.modelDir
     ).replace("/src/", import.meta.hot ? "/src/" : "/dist/");
 

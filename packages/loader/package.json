@@ -1,5 +1,5 @@
 {
-  "name": "@solip-kit/loader",
+  "name": "@saessak-kit/loader",
   "type": "module",
   "version": "2.1.1",
   "exports": {
@@ -16,7 +16,6 @@
   "dependencies": {
     "@loaderkit/resolve": "^1.0.4",
     "@swc/core": "^1.13.5",
-    "esbuild": "^0.25.0",
     "json5": "^2.2.3"
   },
   "devDependencies": {

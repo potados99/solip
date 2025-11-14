@@ -1,4 +1,4 @@
-import { Model } from "solip";
+import { Model } from "saessak";
 
 const now = new Date().toISOString();
 

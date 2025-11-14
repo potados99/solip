@@ -5,10 +5,10 @@ import { existsSync, rmSync } from "fs";
 import { execSync } from "child_process";
 import { exists } from "../utils/fs-utils";
 import path from "path";
-import { Solip } from "../solip";
+import { Saessak } from "../saessak";
 
 async function main() {
-  Solip.init();
+  Saessak.init();
   
   await tsicli(process.argv, {
     types: {},
@@ -36,9 +36,9 @@ async function build() {
 
   try {
     console.log(chalk.blue("SWC로 빌드를 시작합니다."));
-    execSync(getSWCBuildCommand(Solip.apiRootPath), { cwd: Solip.apiRootPath, stdio: "inherit" });
+    execSync(getSWCBuildCommand(Saessak.apiRootPath), { cwd: Saessak.apiRootPath, stdio: "inherit" });
     console.log(chalk.blue("TSC로 선언맵을 생성합니다."));
-    execSync(TSC_DECLARATION_COMMAND, { cwd: Solip.apiRootPath, stdio: "inherit" });
+    execSync(TSC_DECLARATION_COMMAND, { cwd: Saessak.apiRootPath, stdio: "inherit" });
   } catch (error) {
     console.error(chalk.red("빌드에 실패하였습니다."), error);
     process.exit(1);
@@ -50,7 +50,7 @@ async function build() {
 async function serve() {
   console.log(chalk.green("서버를 시작합니다."));
 
-  const distIndexPath = path.join(Solip.apiRootPath, "dist", "index.js");
+  const distIndexPath = path.join(Saessak.apiRootPath, "dist", "index.js");
 
   console.log(`다음 파일을 실행합니다: ${distIndexPath}`);
 
@@ -67,7 +67,7 @@ async function serve() {
     "node",
     ["-r", "source-map-support/register", distIndexPath],
     {
-      cwd: Solip.apiRootPath,
+      cwd: Saessak.apiRootPath,
       stdio: "inherit",
     }
   );
@@ -88,9 +88,9 @@ async function dev() {
   const { spawn } = await import("child_process");
   const serverProcess = spawn(
     "node",
-    ["--import", "@solip-kit/loader", "--import", "dynohot", "--enable-source-maps", entryPoint],
+    ["--import", "@saessak-kit/loader", "--import", "dynohot", "--enable-source-maps", entryPoint],
     {
-      cwd: Solip.apiRootPath,
+      cwd: Saessak.apiRootPath,
       stdio: "inherit",
     }
   );

@@ -1,8 +1,8 @@
-import { Solip } from "solip";
+import { Saessak } from "saessak";
 
 async function bootstrap() {
-    Solip.init();
-    await Solip.createServer(8080);
+    Saessak.init();
+    await Saessak.createServer(8080);
 }
 
 bootstrap();

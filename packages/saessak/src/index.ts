@@ -1,4 +1,4 @@
 import type {} from "dynohot";
 
-export * from "./solip";
+export * from "./saessak";
 export type * from "./types";

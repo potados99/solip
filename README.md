@@ -1,13 +1,14 @@
-# 솔잎(solip)
+# 새싹(saessak) 🌱
 
-[소나무](https://github.com/ping-alive/sonamu)를 처음부터 이해할 수는 없어, 작은 솔잎부터 시작하였습니다.
+[소나무(sonamu)](https://github.com/ping-alive/sonamu)를 처음부터 이해할 수는 없어, 작은 새싹부터 시작하였습니다.
 
 ## 개요
 
 아래 개념을 다루는 간단한 Express.js 서버입니다.
 
-- `swc`와 CommonJS 모듈
-- TypeScript 모듈 HMR
+- 프로덕션에서는 빌드해서 실행, 개발할 때에는 TypeScript 직접 실행하고 HMR
+- `swc`를 이용한 TypeScript 트랜스파일링
+- CLI 명령
 - yarn berry zero-install
 
 ## 실행

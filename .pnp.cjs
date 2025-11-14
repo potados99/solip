@@ -11,11 +11,11 @@ const RAW_RUNTIME_STATE =
   ],\
   "dependencyTreeRoots": [\
     {\
-      "name": "solip-monorepo",\
+      "name": "saessak-monorepo",\
       "reference": "workspace:."\
     },\
     {\
-      "name": "@solip-kit/loader",\
+      "name": "@saessak-kit/loader",\
       "reference": "workspace:packages/loader"\
     },\
     {\
@@ -23,18 +23,18 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/myserver"\
     },\
     {\
-      "name": "solip",\
-      "reference": "workspace:packages/solip"\
+      "name": "saessak",\
+      "reference": "workspace:packages/saessak"\
     }\
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "pnpZipBackend": "libzip",\
   "fallbackExclusionList": [\
-    ["@solip-kit/loader", ["workspace:packages/loader"]],\
+    ["@saessak-kit/loader", ["workspace:packages/loader"]],\
     ["myserver", ["workspace:packages/myserver"]],\
-    ["solip", ["virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/solip", "workspace:packages/solip"]],\
-    ["solip-monorepo", ["workspace:."]]\
+    ["saessak", ["virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/saessak", "workspace:packages/saessak"]],\
+    ["saessak-monorepo", ["workspace:."]]\
   ],\
   "fallbackPool": [\
     [\
@@ -108,110 +108,6 @@ const RAW_RUNTIME_STATE =
     [\
       "@braidai/lang",\
       "npm:1.1.2"\
-    ],\
-    [\
-      "@esbuild/aix-ppc64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/android-arm",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/android-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/android-x64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/darwin-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/darwin-x64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/freebsd-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/freebsd-x64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-arm",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-ia32",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-loong64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-mips64el",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-ppc64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-riscv64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-s390x",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/linux-x64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/netbsd-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/netbsd-x64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/openbsd-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/openbsd-x64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/openharmony-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/sunos-x64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/win32-arm64",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/win32-ia32",\
-      "npm:0.25.12"\
-    ],\
-    [\
-      "@esbuild/win32-x64",\
-      "npm:0.25.12"\
     ],\
     [\
       "@isaacs/balanced-match",\
@@ -334,12 +230,12 @@ const RAW_RUNTIME_STATE =
       "npm:4.0.0"\
     ],\
     [\
-      "@sindresorhus/is",\
-      "npm:5.6.0"\
+      "@saessak-kit/loader",\
+      "workspace:packages/loader"\
     ],\
     [\
-      "@solip-kit/loader",\
-      "workspace:packages/loader"\
+      "@sindresorhus/is",\
+      "npm:5.6.0"\
     ],\
     [\
       "@swc/cli",\
@@ -347,7 +243,7 @@ const RAW_RUNTIME_STATE =
     ],\
     [\
       "@swc/core",\
-      "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"\
+      "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"\
     ],\
     [\
       "@swc/core-darwin-arm64",\
@@ -752,10 +648,6 @@ const RAW_RUNTIME_STATE =
     [\
       "es-object-atoms",\
       "npm:1.1.1"\
-    ],\
-    [\
-      "esbuild",\
-      "npm:0.25.12"\
     ],\
     [\
       "escalade",\
@@ -1270,6 +1162,10 @@ const RAW_RUNTIME_STATE =
       "npm:2.2.0"\
     ],\
     [\
+      "saessak",\
+      "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/saessak"\
+    ],\
+    [\
       "safe-buffer",\
       "npm:5.2.1"\
     ],\
@@ -1356,10 +1252,6 @@ const RAW_RUNTIME_STATE =
     [\
       "socks-proxy-agent",\
       "npm:8.0.5"\
-    ],\
-    [\
-      "solip",\
-      "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/solip"\
     ],\
     [\
       "sort-keys",\
@@ -1550,8 +1442,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["corepack", "npm:0.34.3"],\
           ["prettier", "npm:3.6.2"],\
-          ["solip-monorepo", "workspace:."],\
-          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
+          ["saessak-monorepo", "workspace:."]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1775,240 +1666,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@braidai-lang-npm-1.1.2-0413b7475b-04ece1b744.zip/node_modules/@braidai/lang/",\
         "packageDependencies": [\
           ["@braidai/lang", "npm:1.1.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/aix-ppc64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-aix-ppc64-npm-0.25.12-8c22abd617/node_modules/@esbuild/aix-ppc64/",\
-        "packageDependencies": [\
-          ["@esbuild/aix-ppc64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/android-arm", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-android-arm-npm-0.25.12-30cfcd9e3d/node_modules/@esbuild/android-arm/",\
-        "packageDependencies": [\
-          ["@esbuild/android-arm", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/android-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-android-arm64-npm-0.25.12-00cec8936f/node_modules/@esbuild/android-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/android-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/android-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-android-x64-npm-0.25.12-f0cc7556ec/node_modules/@esbuild/android-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/android-x64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/darwin-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-darwin-arm64-npm-0.25.12-2a5a9f9710/node_modules/@esbuild/darwin-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/darwin-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/darwin-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-darwin-x64-npm-0.25.12-157b2f4f8a/node_modules/@esbuild/darwin-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/darwin-x64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/freebsd-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-freebsd-arm64-npm-0.25.12-82171eee7e/node_modules/@esbuild/freebsd-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/freebsd-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/freebsd-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-freebsd-x64-npm-0.25.12-464a938fa1/node_modules/@esbuild/freebsd-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/freebsd-x64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-arm", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-arm-npm-0.25.12-dd07033e1a/node_modules/@esbuild/linux-arm/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-arm", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-arm64-npm-0.25.12-a5aaa0e70e/node_modules/@esbuild/linux-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-ia32", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-ia32-npm-0.25.12-3b5addbfbb/node_modules/@esbuild/linux-ia32/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-ia32", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-loong64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-loong64-npm-0.25.12-4fec31ffb2/node_modules/@esbuild/linux-loong64/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-loong64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-mips64el", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-mips64el-npm-0.25.12-827ebfd4ef/node_modules/@esbuild/linux-mips64el/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-mips64el", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-ppc64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-ppc64-npm-0.25.12-02e9c28638/node_modules/@esbuild/linux-ppc64/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-ppc64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-riscv64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-riscv64-npm-0.25.12-3c5f314835/node_modules/@esbuild/linux-riscv64/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-riscv64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-s390x", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-s390x-npm-0.25.12-2106b3ddcb/node_modules/@esbuild/linux-s390x/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-s390x", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/linux-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-linux-x64-npm-0.25.12-07c7c22cce/node_modules/@esbuild/linux-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/linux-x64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/netbsd-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-netbsd-arm64-npm-0.25.12-bd2cdd7715/node_modules/@esbuild/netbsd-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/netbsd-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/netbsd-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-netbsd-x64-npm-0.25.12-1f5039ae72/node_modules/@esbuild/netbsd-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/netbsd-x64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/openbsd-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-openbsd-arm64-npm-0.25.12-33119801dd/node_modules/@esbuild/openbsd-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/openbsd-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/openbsd-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-openbsd-x64-npm-0.25.12-e97e4dea2a/node_modules/@esbuild/openbsd-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/openbsd-x64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/openharmony-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-openharmony-arm64-npm-0.25.12-b6855e9fc4/node_modules/@esbuild/openharmony-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/openharmony-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/sunos-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-sunos-x64-npm-0.25.12-21a61a61f1/node_modules/@esbuild/sunos-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/sunos-x64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/win32-arm64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-win32-arm64-npm-0.25.12-daf31eb7a1/node_modules/@esbuild/win32-arm64/",\
-        "packageDependencies": [\
-          ["@esbuild/win32-arm64", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/win32-ia32", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-win32-ia32-npm-0.25.12-7915b5b56e/node_modules/@esbuild/win32-ia32/",\
-        "packageDependencies": [\
-          ["@esbuild/win32-ia32", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@esbuild/win32-x64", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/@esbuild-win32-x64-npm-0.25.12-2425a2e173/node_modules/@esbuild/win32-x64/",\
-        "packageDependencies": [\
-          ["@esbuild/win32-x64", "npm:0.25.12"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2330,6 +1987,21 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@saessak-kit/loader", [\
+      ["workspace:packages/loader", {\
+        "packageLocation": "./packages/loader/",\
+        "packageDependencies": [\
+          ["@loaderkit/resolve", "npm:1.0.4"],\
+          ["@saessak-kit/loader", "workspace:packages/loader"],\
+          ["@swc/core", "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"],\
+          ["@types/node", "npm:24.10.1"],\
+          ["dynohot", "npm:2.1.1"],\
+          ["json5", "npm:2.2.3"],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
     ["@sindresorhus/is", [\
       ["npm:5.6.0", {\
         "packageLocation": "./.yarn/cache/@sindresorhus-is-npm-5.6.0-a25321ecc2-b077c325ac.zip/node_modules/@sindresorhus/is/",\
@@ -2337,22 +2009,6 @@ const RAW_RUNTIME_STATE =
           ["@sindresorhus/is", "npm:5.6.0"]\
         ],\
         "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@solip-kit/loader", [\
-      ["workspace:packages/loader", {\
-        "packageLocation": "./packages/loader/",\
-        "packageDependencies": [\
-          ["@loaderkit/resolve", "npm:1.0.4"],\
-          ["@solip-kit/loader", "workspace:packages/loader"],\
-          ["@swc/core", "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"],\
-          ["@types/node", "npm:24.10.1"],\
-          ["dynohot", "npm:2.1.1"],\
-          ["esbuild", "npm:0.25.12"],\
-          ["json5", "npm:2.2.3"],\
-          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
-        ],\
-        "linkType": "SOFT"\
       }]\
     ]],\
     ["@swc/cli", [\
@@ -2367,7 +2023,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@swc-cli-virtual-ca2605fc6f/0/cache/@swc-cli-npm-0.7.9-0df5bfabe5-b138d2a7c8.zip/node_modules/@swc/cli/",\
         "packageDependencies": [\
           ["@swc/cli", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#npm:0.7.9"],\
-          ["@swc/core", "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"],\
+          ["@swc/core", "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"],\
           ["@swc/counter", "npm:0.1.3"],\
           ["@types/chokidar", null],\
           ["@types/swc__core", null],\
@@ -2389,11 +2045,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:fff8e16f4e690036db1ac0dea4547051b347cca9ed228962facdf5246d18f4a957ea63633a9c7a93660801cd3d224eaedec04b73ff55c7a74ef0de18baa0145f#npm:0.7.9", {\
-        "packageLocation": "./.yarn/__virtual__/@swc-cli-virtual-372e80405b/0/cache/@swc-cli-npm-0.7.9-0df5bfabe5-b138d2a7c8.zip/node_modules/@swc/cli/",\
+      ["virtual:ece71cee498aa3e1ed9f332bfa5505b1ab1473c4714bfe0b5e15a0788cec93e288f7e9e557202e796f8c33d49cdf82b5df901d6a61a255658c75400231a2931c#npm:0.7.9", {\
+        "packageLocation": "./.yarn/__virtual__/@swc-cli-virtual-fcbafe4321/0/cache/@swc-cli-npm-0.7.9-0df5bfabe5-b138d2a7c8.zip/node_modules/@swc/cli/",\
         "packageDependencies": [\
-          ["@swc/cli", "virtual:fff8e16f4e690036db1ac0dea4547051b347cca9ed228962facdf5246d18f4a957ea63633a9c7a93660801cd3d224eaedec04b73ff55c7a74ef0de18baa0145f#npm:0.7.9"],\
-          ["@swc/core", "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"],\
+          ["@swc/cli", "virtual:ece71cee498aa3e1ed9f332bfa5505b1ab1473c4714bfe0b5e15a0788cec93e288f7e9e557202e796f8c33d49cdf82b5df901d6a61a255658c75400231a2931c#npm:0.7.9"],\
+          ["@swc/core", "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"],\
           ["@swc/counter", "npm:0.1.3"],\
           ["@types/chokidar", null],\
           ["@types/swc__core", null],\
@@ -2418,16 +2074,16 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["@swc/core", [\
       ["npm:1.15.1", {\
-        "packageLocation": "./.yarn/unplugged/@swc-core-virtual-2bf750dbae/node_modules/@swc/core/",\
+        "packageLocation": "./.yarn/unplugged/@swc-core-virtual-226ee389a7/node_modules/@swc/core/",\
         "packageDependencies": [\
           ["@swc/core", "npm:1.15.1"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1", {\
-        "packageLocation": "./.yarn/unplugged/@swc-core-virtual-2bf750dbae/node_modules/@swc/core/",\
+      ["virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1", {\
+        "packageLocation": "./.yarn/unplugged/@swc-core-virtual-226ee389a7/node_modules/@swc/core/",\
         "packageDependencies": [\
-          ["@swc/core", "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"],\
+          ["@swc/core", "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"],\
           ["@swc/core-darwin-arm64", "npm:1.15.1"],\
           ["@swc/core-darwin-x64", "npm:1.15.1"],\
           ["@swc/core-linux-arm-gnueabihf", "npm:1.15.1"],\
@@ -3616,41 +3272,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["esbuild", [\
-      ["npm:0.25.12", {\
-        "packageLocation": "./.yarn/unplugged/esbuild-npm-0.25.12-352393c4bd/node_modules/esbuild/",\
-        "packageDependencies": [\
-          ["@esbuild/aix-ppc64", "npm:0.25.12"],\
-          ["@esbuild/android-arm", "npm:0.25.12"],\
-          ["@esbuild/android-arm64", "npm:0.25.12"],\
-          ["@esbuild/android-x64", "npm:0.25.12"],\
-          ["@esbuild/darwin-arm64", "npm:0.25.12"],\
-          ["@esbuild/darwin-x64", "npm:0.25.12"],\
-          ["@esbuild/freebsd-arm64", "npm:0.25.12"],\
-          ["@esbuild/freebsd-x64", "npm:0.25.12"],\
-          ["@esbuild/linux-arm", "npm:0.25.12"],\
-          ["@esbuild/linux-arm64", "npm:0.25.12"],\
-          ["@esbuild/linux-ia32", "npm:0.25.12"],\
-          ["@esbuild/linux-loong64", "npm:0.25.12"],\
-          ["@esbuild/linux-mips64el", "npm:0.25.12"],\
-          ["@esbuild/linux-ppc64", "npm:0.25.12"],\
-          ["@esbuild/linux-riscv64", "npm:0.25.12"],\
-          ["@esbuild/linux-s390x", "npm:0.25.12"],\
-          ["@esbuild/linux-x64", "npm:0.25.12"],\
-          ["@esbuild/netbsd-arm64", "npm:0.25.12"],\
-          ["@esbuild/netbsd-x64", "npm:0.25.12"],\
-          ["@esbuild/openbsd-arm64", "npm:0.25.12"],\
-          ["@esbuild/openbsd-x64", "npm:0.25.12"],\
-          ["@esbuild/openharmony-arm64", "npm:0.25.12"],\
-          ["@esbuild/sunos-x64", "npm:0.25.12"],\
-          ["@esbuild/win32-arm64", "npm:0.25.12"],\
-          ["@esbuild/win32-ia32", "npm:0.25.12"],\
-          ["@esbuild/win32-x64", "npm:0.25.12"],\
-          ["esbuild", "npm:0.25.12"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["escalade", [\
       ["npm:3.2.0", {\
         "packageLocation": "./.yarn/cache/escalade-npm-3.2.0-19b50dd48f-9d7169e396.zip/node_modules/escalade/",\
@@ -4660,13 +4281,13 @@ const RAW_RUNTIME_STATE =
       ["workspace:packages/myserver", {\
         "packageLocation": "./packages/myserver/",\
         "packageDependencies": [\
-          ["@solip-kit/loader", "workspace:packages/loader"],\
+          ["@saessak-kit/loader", "workspace:packages/loader"],\
           ["@swc/cli", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#npm:0.7.9"],\
-          ["@swc/core", "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"],\
+          ["@swc/core", "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"],\
           ["@types/source-map-support", "npm:0.5.10"],\
           ["dynohot", "npm:2.1.1"],\
           ["myserver", "workspace:packages/myserver"],\
-          ["solip", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/solip"],\
+          ["saessak", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/saessak"],\
           ["source-map-support", "npm:0.5.21"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
@@ -5082,6 +4703,75 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["saessak", [\
+      ["virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/saessak", {\
+        "packageLocation": "./.yarn/__virtual__/saessak-virtual-e9f30ed7de/1/packages/saessak/",\
+        "packageDependencies": [\
+          ["@saessak-kit/loader", "workspace:packages/loader"],\
+          ["@swc/cli", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#npm:0.7.9"],\
+          ["@swc/core", "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"],\
+          ["@types/dynohot", null],\
+          ["@types/express", "npm:5.0.5"],\
+          ["@types/saessak-kit__loader", null],\
+          ["@types/source-map-support", "npm:0.5.10"],\
+          ["@types/swc__cli", null],\
+          ["@types/swc__core", null],\
+          ["@types/typescript", null],\
+          ["chalk", "npm:5.6.2"],\
+          ["chokidar", "npm:4.0.3"],\
+          ["dynohot", "npm:2.1.1"],\
+          ["express", "npm:5.1.0"],\
+          ["nodemon", "npm:3.1.11"],\
+          ["saessak", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/saessak"],\
+          ["source-map-support", "npm:0.5.21"],\
+          ["tsicli", "npm:1.0.5"],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
+        ],\
+        "packagePeers": [\
+          "@saessak-kit/loader",\
+          "@swc/cli",\
+          "@swc/core",\
+          "@types/dynohot",\
+          "@types/saessak-kit__loader",\
+          "@types/source-map-support",\
+          "@types/swc__cli",\
+          "@types/swc__core",\
+          "@types/typescript",\
+          "dynohot",\
+          "source-map-support",\
+          "typescript"\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["workspace:packages/saessak", {\
+        "packageLocation": "./packages/saessak/",\
+        "packageDependencies": [\
+          ["@swc/cli", "virtual:ece71cee498aa3e1ed9f332bfa5505b1ab1473c4714bfe0b5e15a0788cec93e288f7e9e557202e796f8c33d49cdf82b5df901d6a61a255658c75400231a2931c#npm:0.7.9"],\
+          ["@swc/core", "virtual:1c5941d659d9e962fba7d37641c6aab370afaacc652146cccda1114d11038295136b7839ec3d5b16faab4a2a03716e8cfc532e55f8400f303dc59e06eb3c24ab#npm:1.15.1"],\
+          ["@types/express", "npm:5.0.5"],\
+          ["chalk", "npm:5.6.2"],\
+          ["chokidar", "npm:4.0.3"],\
+          ["dynohot", "npm:2.1.1"],\
+          ["express", "npm:5.1.0"],\
+          ["nodemon", "npm:3.1.11"],\
+          ["saessak", "workspace:packages/saessak"],\
+          ["tsicli", "npm:1.0.5"],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["saessak-monorepo", [\
+      ["workspace:.", {\
+        "packageLocation": "./",\
+        "packageDependencies": [\
+          ["corepack", "npm:0.34.3"],\
+          ["prettier", "npm:3.6.2"],\
+          ["saessak-monorepo", "workspace:."]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
     ["safe-buffer", [\
       ["npm:5.2.1", {\
         "packageLocation": "./.yarn/cache/safe-buffer-npm-5.2.1-3481c8aa9b-32872cd0ff.zip/node_modules/safe-buffer/",\
@@ -5332,76 +5022,6 @@ const RAW_RUNTIME_STATE =
           ["socks-proxy-agent", "npm:8.0.5"]\
         ],\
         "linkType": "HARD"\
-      }]\
-    ]],\
-    ["solip", [\
-      ["virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/solip", {\
-        "packageLocation": "./.yarn/__virtual__/solip-virtual-053ce12b7d/1/packages/solip/",\
-        "packageDependencies": [\
-          ["@solip-kit/loader", "workspace:packages/loader"],\
-          ["@swc/cli", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#npm:0.7.9"],\
-          ["@swc/core", "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"],\
-          ["@types/dynohot", null],\
-          ["@types/express", "npm:5.0.5"],\
-          ["@types/solip-kit__loader", null],\
-          ["@types/source-map-support", "npm:0.5.10"],\
-          ["@types/swc__cli", null],\
-          ["@types/swc__core", null],\
-          ["@types/typescript", null],\
-          ["chalk", "npm:5.6.2"],\
-          ["chokidar", "npm:4.0.3"],\
-          ["dynohot", "npm:2.1.1"],\
-          ["express", "npm:5.1.0"],\
-          ["nodemon", "npm:3.1.11"],\
-          ["solip", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/solip"],\
-          ["source-map-support", "npm:0.5.21"],\
-          ["tsicli", "npm:1.0.5"],\
-          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
-        ],\
-        "packagePeers": [\
-          "@solip-kit/loader",\
-          "@swc/cli",\
-          "@swc/core",\
-          "@types/dynohot",\
-          "@types/solip-kit__loader",\
-          "@types/source-map-support",\
-          "@types/swc__cli",\
-          "@types/swc__core",\
-          "@types/typescript",\
-          "dynohot",\
-          "source-map-support",\
-          "typescript"\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["workspace:packages/solip", {\
-        "packageLocation": "./packages/solip/",\
-        "packageDependencies": [\
-          ["@swc/cli", "virtual:fff8e16f4e690036db1ac0dea4547051b347cca9ed228962facdf5246d18f4a957ea63633a9c7a93660801cd3d224eaedec04b73ff55c7a74ef0de18baa0145f#npm:0.7.9"],\
-          ["@swc/core", "virtual:4703728e31a7e4d2fff5f2abd45f5899b432ff2d187b39d7f328815f6d0b18fb661c0ea8ac0d1507d0112deb1a6bdb6565fb6b3516ab30a1ee6a1b7cc42922ee#npm:1.15.1"],\
-          ["@types/express", "npm:5.0.5"],\
-          ["chalk", "npm:5.6.2"],\
-          ["chokidar", "npm:4.0.3"],\
-          ["dynohot", "npm:2.1.1"],\
-          ["express", "npm:5.1.0"],\
-          ["nodemon", "npm:3.1.11"],\
-          ["solip", "workspace:packages/solip"],\
-          ["tsicli", "npm:1.0.5"],\
-          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
-        ],\
-        "linkType": "SOFT"\
-      }]\
-    ]],\
-    ["solip-monorepo", [\
-      ["workspace:.", {\
-        "packageLocation": "./",\
-        "packageDependencies": [\
-          ["corepack", "npm:0.34.3"],\
-          ["prettier", "npm:3.6.2"],\
-          ["solip-monorepo", "workspace:."],\
-          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
-        ],\
-        "linkType": "SOFT"\
       }]\
     ]],\
     ["sort-keys", [\

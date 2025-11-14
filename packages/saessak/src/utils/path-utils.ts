@@ -28,8 +28,8 @@ export function findApiRootPath() {
   
   throw new Error("프로젝트 루트 경로를 찾을 수 없습니다.");
 
-  // import.meta.filename이 요따구로 나옴: /Users/potados/Projects/solip/.yarn/__virtual__/solip-virtual-053ce12b7d/1/packages/solip/dist/utils/path-utils.js
-  // 그래서 찾아봤자 /Users/potados/Projects/solip 이런 식으로 나옴
+  // import.meta.filename이 요따구로 나옴: /Users/potados/Projects/saessak/.yarn/__virtual__/saessak-virtual-053ce12b7d/1/packages/saessak/dist/utils/path-utils.js
+  // 그래서 찾아봤자 /Users/potados/Projects/saessak 이런 식으로 나옴
   // 결국 이 경로에서는 실제 프로젝트 경로를 못 구함.
   // 그치만 workspace 환경이 아니면 작동할 것임!
 }

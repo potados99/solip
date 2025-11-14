@@ -5,7 +5,7 @@ import http from "http";
 import { findApiRootPath } from "./utils/path-utils";
 import chalk from "chalk";
 
-class SolipClass {
+class SaessakClass {
   private server?: http.Server;
 
   private _apiRootPath: string | null = null;
@@ -15,13 +15,13 @@ class SolipClass {
   }
   get apiRootPath(): string {
     if (this._apiRootPath === null) {
-      throw new Error("Solip이 초기화되지 않았습니다.");
+      throw new Error("Saessak이 초기화되지 않았습니다.");
     }
     return this._apiRootPath!;
   }
   
   init() {
-    console.log(chalk.green("Solip을 초기화합니다."));
+    console.log(chalk.green("Saessak을 초기화합니다."));
 
     this.apiRootPath = findApiRootPath();
   }
@@ -58,4 +58,4 @@ class SolipClass {
   }
 }
 
-export const Solip = new SolipClass();
+export const Saessak = new SaessakClass();

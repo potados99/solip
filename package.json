@@ -1,12 +1,11 @@
 {
-  "name": "solip-monorepo",
+  "name": "saessak-monorepo",
   "workspaces": [
     "packages/*"
   ],
   "packageManager": "yarn@4.10.3",
   "devDependencies": {
     "corepack": "^0.34.1",
-    "prettier": "^3.6.2",
-    "typescript": "^5.9.3"
+    "prettier": "^3.6.2"
   }
 }

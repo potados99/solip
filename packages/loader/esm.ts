@@ -370,7 +370,7 @@ export function makeResolveAndLoad(underlyingFileSystem: LoaderFileSystem) {
 				}
 
 				default:
-					throw new Error("@solip-kit/loader: Unexpected format");
+					throw new Error("@saessak-kit/loader: Unexpected format");
 			}
 		}();
 	};

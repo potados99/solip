@@ -1,7 +1,7 @@
 {
-  "name": "solip",
+  "name": "saessak",
   "version": "1.0.0",
-  "repository": "git@github.com:potados99/solip.git",
+  "repository": "git@github.com:potados99/saessak.git",
   "author": "potados99 <potados99@gmail.com>",
   "license": "MIT",
   "type": "module",
@@ -38,7 +38,7 @@
     }
   },
   "peerDependencies": {
-    "@solip-kit/loader": "^2.1.1",
+    "@saessak-kit/loader": "^2.1.1",
     "@swc/cli": "^0.7.8",
     "@swc/core": "^1.13.5",
     "dynohot": "^2.1.1",
