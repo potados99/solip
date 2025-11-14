@@ -2732,6 +2732,7 @@ __metadata:
     dynohot: "npm:^2.1.1"
     solip: "workspace:^"
     source-map-support: "npm:^0.5.21"
+    typescript: "npm:^5.9.3"
   languageName: unknown
   linkType: soft
 
@@ -3353,6 +3354,7 @@ __metadata:
     "@swc/core": ^1.13.5
     dynohot: ^2.1.1
     source-map-support: ^0.5.21
+    typescript: ^5.9.3
   dependenciesMeta:
     dynohot@2.1.1:
       unplugged: true

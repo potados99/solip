@@ -1,6 +1,6 @@
 import { tsicli } from "tsicli";
 import chalk from "chalk";
-import { BUILD_DIR, getSWCBuildCommand } from "./build-config";
+import { BUILD_DIR, getSWCBuildCommand, TSC_DECLARATION_COMMAND } from "./build-config";
 import { existsSync, rmSync } from "fs";
 import { execSync } from "child_process";
 import { exists } from "../utils/fs-utils";
@@ -37,10 +37,14 @@ async function build() {
   try {
     console.log(chalk.blue("SWC로 빌드를 시작합니다."));
     execSync(getSWCBuildCommand(Solip.apiRootPath), { cwd: Solip.apiRootPath, stdio: "inherit" });
+    console.log(chalk.blue("TSC로 선언맵을 생성합니다."));
+    execSync(TSC_DECLARATION_COMMAND, { cwd: Solip.apiRootPath, stdio: "inherit" });
   } catch (error) {
     console.error(chalk.red("빌드에 실패하였습니다."), error);
     process.exit(1);
   }
+
+  console.log(chalk.green("빌드가 완료되었습니다."));
 }
 
 async function serve() {

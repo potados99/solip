@@ -20,6 +20,11 @@ export const getSWCBuildCommand = (
 -C sourceMaps=true`;
 
 /**
+ * TSC 선언맵 생성 명령어
+ */
+export const TSC_DECLARATION_COMMAND = `tsc --emitDeclarationOnly`;
+
+/**
  * TSC 타입 체크 명령어
  */
 export const TSC_TYPE_CHECK_COMMAND = `tsc --noEmit`;

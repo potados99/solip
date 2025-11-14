@@ -4667,7 +4667,8 @@ const RAW_RUNTIME_STATE =
           ["dynohot", "npm:2.1.1"],\
           ["myserver", "workspace:packages/myserver"],\
           ["solip", "virtual:5bcf818473b46abfc3b9acf73b58ae98e22b68b974b709c6dc380a211ffa00b55195dafcda5d7c872bdce532adb8f1bb82e64461e9823e9a72a46bdca70935d2#workspace:packages/solip"],\
-          ["source-map-support", "npm:0.5.21"]\
+          ["source-map-support", "npm:0.5.21"],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -5346,6 +5347,7 @@ const RAW_RUNTIME_STATE =
           ["@types/source-map-support", "npm:0.5.10"],\
           ["@types/swc__cli", null],\
           ["@types/swc__core", null],\
+          ["@types/typescript", null],\
           ["chalk", "npm:5.6.2"],\
           ["chokidar", "npm:4.0.3"],\
           ["dynohot", "npm:2.1.1"],\
@@ -5365,8 +5367,10 @@ const RAW_RUNTIME_STATE =
           "@types/source-map-support",\
           "@types/swc__cli",\
           "@types/swc__core",\
+          "@types/typescript",\
           "dynohot",\
-          "source-map-support"\
+          "source-map-support",\
+          "typescript"\
         ],\
         "linkType": "SOFT"\
       }],\
