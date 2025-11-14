@@ -6,8 +6,8 @@
 
 아래 개념을 다루는 간단한 Express.js 서버입니다.
 
-- 프로덕션에서는 빌드해서 실행, 개발할 때에는 TypeScript 직접 실행하고 HMR
-- `swc`를 이용한 TypeScript 트랜스파일링
+- 빌드 과정과 dist 디렉토리 없이 바로 실행 및 HMR을 지원하는 런타임
+- 커스텀 로더를 사용한 import 경로 해석과 즉각적 swc 트랜스파일링
 - CLI 명령
 - yarn berry zero-install
 
